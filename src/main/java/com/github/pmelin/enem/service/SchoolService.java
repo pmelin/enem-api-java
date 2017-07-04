@@ -14,6 +14,6 @@ public interface SchoolService {
 	 * @param id the id of the school.
 	 * @return school with the id or null
 	 */
-	School schoolByCode(Long id);
+	School findSchoolByCode(Long id);
 	
 }

@@ -39,7 +39,7 @@ public class SchoolController {
 	public ResponseEntity<School> getSchoolById(@PathVariable Long code) {
 		try {
 
-			School school = service.schoolByCode(code);
+			School school = service.findSchoolByCode(code);
 			if (school == null) {
 				return new ResponseEntity<School>(HttpStatus.NOT_FOUND);
 			} else {

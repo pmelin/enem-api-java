@@ -19,7 +19,7 @@ public class SchoolServiceImpl implements SchoolService {
 	private SchoolRepository schoolRepository;
 
 	@Override
-	public School schoolByCode(Long code) {
+	public School findSchoolByCode(Long code) {
 		return this.schoolRepository.findByCode(code);
 
 	}

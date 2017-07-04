@@ -1,29 +1,49 @@
 package com.github.pmelin.enem.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Entity that represents a school.
  */
-@Document(collection="schools")
+@Document(collection = "schools")
 public class School {
 
-
+	@Id
+	private String id;
 	private Long code;
 	private String name;
 	private String uf;
 	private String municipality;
 	private String adminDependency;
-	private Double participationRate;
+	private double participationRate;
 	private String permanenceRate;
-	private Double teacherTraining;
-	private Double approvalRate;
-	private Double disapprovalRate;
-	private Double abandonmentRate;
-	private Double average;
+	private double teacherTraining;
+	private double approvalRate;
+	private double disapprovalRate;
+	private double abandonmentRate;
+	private double average;
 
 	public School() {
 
+	}
+
+	public School(Long code, String name, String uf, String municipality, String adminDependency, double average) {
+		super();
+		this.code = code;
+		this.name = name;
+		this.uf = uf;
+		this.municipality = municipality;
+		this.adminDependency = adminDependency;
+		this.average = average;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 	public Long getCode() {
@@ -66,7 +86,7 @@ public class School {
 		this.adminDependency = adminDependency;
 	}
 
-	public Double getParticipationRate() {
+	public double getParticipationRate() {
 		return participationRate;
 	}
 
@@ -82,7 +102,7 @@ public class School {
 		this.permanenceRate = permanenceRate;
 	}
 
-	public Double getTeacherTraining() {
+	public double getTeacherTraining() {
 		return teacherTraining;
 	}
 
@@ -90,7 +110,7 @@ public class School {
 		this.teacherTraining = teacherTraining;
 	}
 
-	public Double getApprovalRate() {
+	public double getApprovalRate() {
 		return approvalRate;
 	}
 
@@ -98,7 +118,7 @@ public class School {
 		this.approvalRate = approvalRate;
 	}
 
-	public Double getDisapprovalRate() {
+	public double getDisapprovalRate() {
 		return disapprovalRate;
 	}
 
@@ -106,7 +126,7 @@ public class School {
 		this.disapprovalRate = disapprovalRate;
 	}
 
-	public Double getAbandonmentRate() {
+	public double getAbandonmentRate() {
 		return abandonmentRate;
 	}
 
@@ -114,7 +134,7 @@ public class School {
 		this.abandonmentRate = abandonmentRate;
 	}
 
-	public Double getAverage() {
+	public double getAverage() {
 		return average;
 	}
 
