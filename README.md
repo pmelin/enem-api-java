@@ -1,6 +1,14 @@
 # enem-api-java
 Java API with methods to search high schools ranked according to ENEM - a Brazilian national secondary exam. The api accesses the Mongo database created by [enem-db](https://github.com/pmelin/enem-db).
 
+## Tech Stack
+
+- Spring Boot
+- Spring Data MongoDB
+- Spring MVC
+- Java 8
+- MongoDB
+
 ## Routes
 
 - GET /school/code/{code}
