@@ -33,5 +33,56 @@ Retrieves the details of a school by it's code. Ex: `school/code/11027290`
   "average": 522.946
 }
 ```
+- GET /schools/{page}
+
+Retrieves all schools. All requests must inform a page. Ex: `/schools/1`
+```javascript
+[
+  {
+    "code": 35399197,
+    "name": "OBJETIVO COLEGIO INTEGRADO",
+    "uf": "SP",
+    "municipality": "SAO PAULO",
+    "adminDependency": "Privada",
+    "participationRate": 100,
+    "permanenceRate": "De 60% a 80%",
+    "teacherTraining": 100,
+    "approvalRate": 100,
+    "disapprovalRate": 0,
+    "abandonmentRate": 0,
+    "average": 763.664
+  },
+
+  {
+    "code": 22025740,
+    "name": "INST DOM BARRETO",
+    "uf": "PI",
+    "municipality": "TERESINA",
+    "adminDependency": "Privada",
+    "participationRate": 96.12,
+    "permanenceRate": "80% ou mais",
+    "teacherTraining": 81.9,
+    "approvalRate": 85.7,
+    "disapprovalRate": 14.3,
+    "abandonmentRate": 0,
+    "average": 753.744
+  },
+  {
+    "code": 23246880,
+    "name": "CHRISTUS COLEGIO PRE UNIVERSITARIO",
+    "uf": "CE",
+    "municipality": "FORTALEZA",
+    "adminDependency": "Privada",
+    "participationRate": 98.33,
+    "permanenceRate": "Menos de 20%",
+    "teacherTraining": 46.2,
+    "approvalRate": 100,
+    "disapprovalRate": 0,
+    "abandonmentRate": 0,
+    "average": 751.326
+  },
+  ...
+]
+```
 
 
