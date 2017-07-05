@@ -16,19 +16,19 @@ public class School {
 	private String uf;
 	private String municipality;
 	private String adminDependency;
-	private double participationRate;
+	private Double participationRate;
 	private String permanenceRate;
-	private double teacherTraining;
-	private double approvalRate;
-	private double disapprovalRate;
-	private double abandonmentRate;
-	private double average;
+	private Double teacherTraining;
+	private Double approvalRate;
+	private Double disapprovalRate;
+	private Double abandonmentRate;
+	private Double average;
 
 	public School() {
 
 	}
 
-	public School(Long code, String name, String uf, String municipality, String adminDependency, double average) {
+	public School(Long code, String name, String uf, String municipality, String adminDependency, Double average) {
 		super();
 		this.code = code;
 		this.name = name;
@@ -86,7 +86,7 @@ public class School {
 		this.adminDependency = adminDependency;
 	}
 
-	public double getParticipationRate() {
+	public Double getParticipationRate() {
 		return participationRate;
 	}
 
@@ -102,7 +102,7 @@ public class School {
 		this.permanenceRate = permanenceRate;
 	}
 
-	public double getTeacherTraining() {
+	public Double getTeacherTraining() {
 		return teacherTraining;
 	}
 
@@ -110,7 +110,7 @@ public class School {
 		this.teacherTraining = teacherTraining;
 	}
 
-	public double getApprovalRate() {
+	public Double getApprovalRate() {
 		return approvalRate;
 	}
 
@@ -118,7 +118,7 @@ public class School {
 		this.approvalRate = approvalRate;
 	}
 
-	public double getDisapprovalRate() {
+	public Double getDisapprovalRate() {
 		return disapprovalRate;
 	}
 
@@ -126,7 +126,7 @@ public class School {
 		this.disapprovalRate = disapprovalRate;
 	}
 
-	public double getAbandonmentRate() {
+	public Double getAbandonmentRate() {
 		return abandonmentRate;
 	}
 
@@ -134,7 +134,7 @@ public class School {
 		this.abandonmentRate = abandonmentRate;
 	}
 
-	public double getAverage() {
+	public Double getAverage() {
 		return average;
 	}
 

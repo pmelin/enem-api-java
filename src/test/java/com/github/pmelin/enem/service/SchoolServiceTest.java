@@ -1,6 +1,8 @@
 package com.github.pmelin.enem.service;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.lang.reflect.Field;
 
@@ -16,7 +18,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.github.pmelin.enem.TestConfiguration;
 import com.github.pmelin.enem.model.School;
 import com.github.pmelin.enem.repository.SchoolRepository;
-import static org.junit.Assert.*;
 
 /**
  * Test case for {@link SchoolService}.

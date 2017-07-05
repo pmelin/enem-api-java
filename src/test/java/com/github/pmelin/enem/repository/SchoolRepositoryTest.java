@@ -1,5 +1,12 @@
 package com.github.pmelin.enem.repository;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,12 +18,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.github.pmelin.enem.TestConfiguration;
 import com.github.pmelin.enem.model.School;
-import com.github.pmelin.enem.repository.SchoolRepository;
-
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Test case for {@link SchoolRepository}.
@@ -40,7 +41,7 @@ public class SchoolRepositoryTest {
 		testSchools.add(new School(11033797L, "EEEFM ALVARES DE AZEVEDO", "RO", "VILHENA", "Estadual", 499.33));
 		testSchools.add(new School(11033797L, "EEEFM ALVARES DE AZEVEDO", "RO", "VILHENA", "Estadual", 499.33));
 		testSchools.add(new School(11015608L, "EEEFM ALUIZIO FERREIRA", "RO", "JI-PARANA", "Estadual", 478.002));
-		testSchools.add(new School(13098519L, "COLEGIO DOM BOSCO LESTE", "AM", "MANAUS", "Privada", 4957));
+		testSchools.add(new School(13098519L, "COLEGIO DOM BOSCO LESTE", "AM", "MANAUS", "Privada", 4957.0));
 		testSchools.add(new School(15132412L, "EEEM MACARIO DANTAS SEDE", "PA", "SAO GERALDO DO ARAGUAIA", "Estadual",
 				460.004));
 		testSchools.add(

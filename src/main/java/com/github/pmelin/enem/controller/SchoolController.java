@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,7 +50,7 @@ public class SchoolController {
 			}
 
 		} catch (Exception e) {
-			LOGGER.log(Level.INFO, "Error while retrieving school by code", e);
+			LOGGER.log(Level.SEVERE, "Error while retrieving school by code", e);
 			return new ResponseEntity<School>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -58,12 +59,17 @@ public class SchoolController {
 	 * Returns the list of schools considering multiple optional filters.
 	 */
 	@RequestMapping(value = "/schools/{page}", method = RequestMethod.GET)
-	public ResponseEntity<List<School>> getSchoolByFilters(@PathVariable int page) {
+	public ResponseEntity<List<School>> getSchoolByFilters(@PathVariable int page, HttpServletRequest request) {
 		try {
-			List<School> schools = service.findSchoolsByFilters(page);
+			if (request.getParameter("uf") == null && request.getParameter("municipality") != null) {
+				LOGGER.log(Level.WARNING, "Missing uf parameter");
+				return new ResponseEntity<List<School>>(HttpStatus.BAD_REQUEST);
+			}
+
+			List<School> schools = service.findSchoolsByFilters(request.getParameterMap(), page);
 			return new ResponseEntity<List<School>>(schools, HttpStatus.OK);
 		} catch (Exception e) {
-			LOGGER.log(Level.INFO, "Error while retrieving schools by filters", e);
+			LOGGER.log(Level.SEVERE, "Error while retrieving schools by filters", e);
 			return new ResponseEntity<List<School>>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}

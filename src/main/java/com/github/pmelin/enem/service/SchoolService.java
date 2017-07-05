@@ -1,6 +1,7 @@
 package com.github.pmelin.enem.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.github.pmelin.enem.model.School;
 
@@ -26,7 +27,8 @@ public interface SchoolService {
 	 * 
 	 * @param page
 	 * @return list of schools
+	 * @throws Exception 
 	 */
-	List<School> findSchoolsByFilters(int page);
+	List<School> findSchoolsByFilters(Map<String, String[]> filters, int page);
 
 }
