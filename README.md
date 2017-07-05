@@ -84,5 +84,22 @@ Retrieves all schools. All requests must inform a page. Ex: `/schools/1`
   ...
 ]
 ```
+- Optional filters: search per admin dependency, unit federation, municipality or name.
 
+Examples:
 
+`/schools/1?adm=PRI`
+
+Retrieves private schools.
+
+`schools/1?uf=AC/`
+
+Retrieves all schools located at Acre state.
+
+`/schools/1?uf=RO&municipality=Ariquemes`
+
+Retrieves all schools located at Rondônia state and Ariquemes municipality.
+
+`/schools/1?adm=PRI&uf=RO&municipality=CACOAL&name=CORA`
+
+Retrieves all private schools located at Rondônia state and Cacoal municipality which contains the word Cora on its name.
