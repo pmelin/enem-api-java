@@ -8,6 +8,8 @@ Java API with methods to search high schools ranked according to ENEM - a Brazil
 - Spring MVC
 - Java 8
 - MongoDB
+- JUnit
+- Mockito
 
 ## Routes
 
