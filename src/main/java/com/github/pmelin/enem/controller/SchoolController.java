@@ -1,9 +1,11 @@
 package com.github.pmelin.enem.controller;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,12 +30,12 @@ public class SchoolController {
 
 	@Autowired
 	private SchoolRepository repository;
-	
+
 	@Autowired
 	private SchoolService service;
 
 	/**
-	 * Returns information about a specific school according to it's code
+	 * Returns information about a specific school according to it's code.
 	 */
 	@RequestMapping(value = "/school/code/{code}", method = RequestMethod.GET)
 	public ResponseEntity<School> getSchoolById(@PathVariable Long code) {
@@ -52,5 +54,18 @@ public class SchoolController {
 		}
 	}
 
+	/**
+	 * Returns the list of schools considering multiple optional filters.
+	 */
+	@RequestMapping(value = "/schools/{page}", method = RequestMethod.GET)
+	public ResponseEntity<List<School>> getSchoolByFilters(@PathVariable int page) {
+		try {
+			List<School> schools = service.findSchoolsByFilters(page);
+			return new ResponseEntity<List<School>>(schools, HttpStatus.OK);
+		} catch (Exception e) {
+			LOGGER.log(Level.INFO, "Error while retrieving schools by filters", e);
+			return new ResponseEntity<List<School>>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 
 }

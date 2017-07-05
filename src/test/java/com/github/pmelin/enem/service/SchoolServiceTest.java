@@ -46,11 +46,17 @@ public class SchoolServiceTest {
 		School school = this.service.findSchoolByCode(1L);
 		assertNotNull(school);
 		assertEquals(school1.getName(), school.getName());
+		assertEquals(school1.getUf(), school.getUf());
+		assertEquals(school1.getMunicipality(), school.getMunicipality());
+		assertEquals(school1.getAdminDependency(), school.getAdminDependency());
+		assertEquals(school1.getAverage(), school.getAverage(), 0);
+
 	}
 
 	@Test
 	public void schoolShouldBeNullIfDoesntExists() {
-
+		School school = this.service.findSchoolByCode(13234234234234L);
+		assertNull(school);
 	}
 
 }
